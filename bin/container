@@ -1,0 +1,6 @@
+#!/bin/sh
+IMAGE_TAG=reactphp-adapter-issue-with-streaming:local
+
+[ ! -z $(docker images -q "$IMAGE_TAG") ] || docker build -t $IMAGE_TAG --file provisioning/php/Dockerfile .
+
+docker run -v `pwd`:/app -w /app --network=host -t --rm -i $IMAGE_TAG $*

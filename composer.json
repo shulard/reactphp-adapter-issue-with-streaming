@@ -1,0 +1,6 @@
+{
+    "require": {
+        "php-http/react-adapter": "^4.0",
+        "nyholm/psr7": "^1.5"
+    }
+}
